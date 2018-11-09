@@ -12,7 +12,7 @@ DB = mongo_client["comments-db"]
 class CommentsResource:
     def on_get(self, req, resp, image_id):
         try:
-            comments = list(DB.comments.find({'imageId': image_id}, {'_id': False, 'userId': False}))
+            comments = list(DB.comments.find({'imageId': image_id}, {'_id': False, 'userId': False, 'imageId': False}))
             resp.body = json.dumps({'status': 'ok', 'data': comments})
         except Exception as ex:
             raise falcon.HTTPError(ex)
