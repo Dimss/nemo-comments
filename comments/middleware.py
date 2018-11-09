@@ -13,7 +13,7 @@ class JSONTranslator(object):
 class AuthMiddleware(object):
 
     def process_request(self, req, resp):
-        if 'X-AUTH-NEMO' not in req.headers:
+        if 'X-NEMO-AUTH' not in req.headers:
             raise falcon.HTTPUnauthorized('Missing auth token')
         auth_token = req.headers.get('X-AUTH-NEMO')
         user_identity = jwt.decode(auth_token, 'secret')
