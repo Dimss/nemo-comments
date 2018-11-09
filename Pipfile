@@ -17,4 +17,4 @@ pylint = "*"
 python_version = "3.6"
 
 [scripts]
-api  = "gunicorn -b 0.0.0.0:8080 app"
+api  = "gunicorn -b 0.0.0.0:8080 --chdir comments app"
