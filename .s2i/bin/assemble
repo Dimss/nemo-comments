@@ -1,4 +1,3 @@
-ls -all /tmp/src
 cp -r /tmp/src/ /opt/app-root/
 ls -all /opt/app-root/src
-pipenv install
+pip install -r requirements.txt

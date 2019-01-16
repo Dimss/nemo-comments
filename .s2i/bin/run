@@ -1,1 +1,1 @@
-pipenv run api
+gunicorn -b 0.0.0.0:8080 --chdir comments app
