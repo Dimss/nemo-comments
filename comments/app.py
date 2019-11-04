@@ -5,9 +5,9 @@ import json
 from comments.middleware import AuthMiddleware, JSONTranslator
 
 MONGO_HOST = os.environ['MONGO_HOST']
-MONGO_USER = os.environ['MONGO_USER']
-MONGO_PASS = os.environ['MONGO_PASS']
-MONGO_DB = os.environ['MONGO_DB']
+MONGO_USER = os.environ['MONGODB_USER']
+MONGO_PASS = os.environ['MONGODB_PASSWORD']
+MONGO_DB = os.environ['MONGODB_DATABASE']
 mongo_client = pymongo.MongoClient(f"mongodb://{MONGO_USER}:{MONGO_PASS}@{MONGO_HOST}:27017/")
 DB = mongo_client[MONGO_DB]
 
